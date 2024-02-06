@@ -1,0 +1,26 @@
+<div fxLayoutAlign="center">
+  <form [formGroup]="form" class="example-form" (ngSubmit)="onSub()">
+    <mat-form-field class="example-full-width">
+      <mat-label>cin</mat-label>
+      <input type="text" matInput placeholder="Ex.124948134" formControlName="cin">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>name</mat-label>
+      <input type="text" matInput placeholder="Ex. foulen" formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>type</mat-label>
+      <input type="text" matInput placeholder="Ex. x" formControlName="type">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>cv</mat-label>
+      <input type="text" matInput placeholder="Cv" formControlName="cv">
+    </mat-form-field>
+    <div class="buttoncreate" fxLayout="row" fxLayoutAlign="end center">
+      <button type="submit" mat-fab extended color="primary">
+        <mat-icon>save</mat-icon>
+        Save
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MemberService } from 'src/service/member.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { MemberService } from 'src/service/member.service';
   styleUrls: ['./member-form.component.css']
 })
 export class MemberFormComponent implements OnInit {
-  constructor(private Ms :MemberService){// injection de dependance
+  constructor(private Ms :MemberService ,private router :Router){// injection de dependance
 
   }
   form !: FormGroup ;
@@ -31,7 +32,13 @@ export class MemberFormComponent implements OnInit {
     console.log(this.form.value);
     const MemberToSave=this.form.value;
     // appler la fornction du service ONSAVE(MmeberToSave)
-   // this.Ms.ONSAVE(MemberToSave)
+   this.Ms.ONSAVE(MemberToSave).subscribe(()=>{
+    //redirection
+    this.router.navigate(['/members'])
+   })
+
+
+
   }
 
 }

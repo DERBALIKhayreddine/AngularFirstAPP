@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import { GLOBAL } from '../app-config';
+import { MemberService } from 'src/service/member.service';
 
 
 @Component({
@@ -11,6 +12,16 @@ import { GLOBAL } from '../app-config';
 })
 export class MemberComponent {
   displayedColumns: string[] = ['id', 'cin', 'name', 'type','cv','createDate','actions'];
-dataSource:any[]=GLOBAL.DB.members
+  constructor (private MS: MemberService){}
+  dataSource:any[]= this.MS.tab
+
+
+Delete(id:string):void
+{
+ this.MS.ONDELETE(id).subscribe(()=>{
+  this.dataSource= this.MS.tab
+ })
+}
+
 
 }

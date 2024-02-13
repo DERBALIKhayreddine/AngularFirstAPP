@@ -21,6 +21,11 @@ const routes: Routes = [
   pathMatch:'full',
   redirectTo:'members'
 },
+{
+  path:':id/edit',
+  pathMatch: 'full',
+  component : MemberFormComponent
+}
 ];
 
 @NgModule({

@@ -21,8 +21,33 @@ export class MemberService {
       createDate: new Date().toISOString()
      }
     this.tab.push(member1)
-    return new Observable(observer=>observer.next())
+    return new Observable(observer=>observer.next());
   }
 
+  ONDELETE(id:string): Observable<any>
+  {
+    //return this.httpCLient.delete('linktorestAPI')
+    this.tab=this.tab.filter(item=>item.id!=id)
+    return new Observable(observer=>observer.next());
+  }
+
+  getMemberByID(idcourant:string):Observable<any>
+  {
+    //return this.httpCLient.get<any>(LinkToRestApi);
+
+    return new Observable(observer=>observer.next(
+      this.tab.filter(item=>item.id==idcourant)[0]??null
+    ))
+
+
+  }
+
+
+
+
+
   constructor(private httpCLient:HttpClient) { }
+
+
+
 }

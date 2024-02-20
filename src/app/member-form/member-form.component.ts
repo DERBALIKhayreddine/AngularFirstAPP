@@ -21,7 +21,8 @@ export class MemberFormComponent implements OnInit {
 
     //verify if there is edit on the link
     if (!!idcourant) {
-      //this.Ms.getMemberByID(idcourant).subscribe((x)=>{this.initForm2})
+
+      this.Ms.getMemberByID(idcourant).subscribe((x)=>{this.initForm2(x)})
 
     }
     else{
@@ -33,6 +34,15 @@ export class MemberFormComponent implements OnInit {
       cin: new FormControl(null, [Validators.required]),
       name: new FormControl(null, [Validators.required]),
       cv: new FormControl(null, [Validators.required]),
+      type: new FormControl(null, [Validators.required]),
+      createDate: new FormControl(null, [Validators.required]),
+    })
+  }
+  initForm2(x: any): void {
+    this.form = new FormGroup({
+      cin: new FormControl(x.cin, [Validators.required]),
+      name: new FormControl(x.name, [Validators.required]),
+      cv: new FormControl(x.cv, [Validators.required]),
       type: new FormControl(null, [Validators.required]),
       createDate: new FormControl(null, [Validators.required]),
     })

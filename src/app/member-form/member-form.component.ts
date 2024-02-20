@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Member } from 'src/models/Member';
 import { MemberService } from 'src/service/member.service';
 
 @Component({
@@ -38,7 +39,7 @@ export class MemberFormComponent implements OnInit {
       createDate: new FormControl(null, [Validators.required]),
     })
   }
-  initForm2(x: any): void {
+  initForm2(x: Member): void {
     this.form = new FormGroup({
       cin: new FormControl(x.cin, [Validators.required]),
       name: new FormControl(x.name, [Validators.required]),

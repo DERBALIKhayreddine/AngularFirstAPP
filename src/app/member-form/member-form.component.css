@@ -1,6 +1,10 @@
-.example-form {
-  width: 70%;
+
+.form-container {
+  max-width: 400px; /* adjust as needed */
+  width: 100%;
 }
-.example-full-width {
-  width: 70%;
+.example-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

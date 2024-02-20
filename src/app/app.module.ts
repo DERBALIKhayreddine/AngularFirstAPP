@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { FirebaseModule } from './Firebase.module (2)';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    FirebaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

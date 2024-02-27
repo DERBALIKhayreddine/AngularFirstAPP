@@ -8,6 +8,7 @@ import { Member } from 'src/models/Member';
   providedIn: 'root'
 })
 export class MemberService {
+
   tab: Member[]= GLOBAL.DB.members;
 
   ONSAVE(MemberToSave:Member): Observable<Member>
@@ -40,10 +41,13 @@ export class MemberService {
       this.tab.filter(item=>item.id==idcourant)[0]??null
     ))
 
-
   }
-
-
+  updateMember(id:string, memberupdate:any ):Observable<any>
+  {
+    const index = this.tab.findIndex(item=>item.id==id);
+    this.tab[index]={...memberupdate}
+    return new Observable(observer=>observer.next())
+  }
 
 
 

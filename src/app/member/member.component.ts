@@ -18,6 +18,7 @@ export class MemberComponent {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       height: '200px',
       width: '300px',
+
     });
     dialogRef.afterClosed().subscribe((x) => {
       if (x) {

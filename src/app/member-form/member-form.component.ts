@@ -10,7 +10,10 @@ import { MemberService } from 'src/service/member.service';
   templateUrl: './member-form.component.html',
   styleUrls: ['./member-form.component.css']
 })
+
 export class MemberFormComponent implements OnInit {
+  idcourant! : string
+
   constructor(private Ms: MemberService,
     private router: Router,
     private activatedRoute: ActivatedRoute) { }
@@ -18,12 +21,12 @@ export class MemberFormComponent implements OnInit {
   form !: FormGroup;
   ngOnInit(): void {
     //get id of the route
-    const idcourant = this.activatedRoute.snapshot.params['id']
+    this.idcourant = this.activatedRoute.snapshot.params['id']
 
     //verify if there is edit on the link
-    if (!!idcourant) {
+    if (!!this.idcourant) {
 
-      this.Ms.getMemberByID(idcourant).subscribe((x)=>{this.initForm2(x)})
+      this.Ms.getMemberByID(this.idcourant).subscribe((x)=>{this.initForm2(x)})
 
     }
     else{
@@ -49,6 +52,14 @@ export class MemberFormComponent implements OnInit {
     })
   }
   onSub(): void {
+    if (!!this.idcourant){
+      this.Ms.updateMember(this.idcourant,this.form.value).subscribe(()=>{
+        this.router.navigate(['/members'])
+
+      })
+
+    }
+    else{
     //get the data from  member-form.html
     console.log(this.form.value);
     const MemberToSave = this.form.value;
@@ -56,8 +67,9 @@ export class MemberFormComponent implements OnInit {
     this.Ms.ONSAVE(MemberToSave).subscribe(() => {
       //redirection
       this.router.navigate(['/members'])
-    })
 
+    })
+  }
 
 
   }

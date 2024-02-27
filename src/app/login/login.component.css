@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set height to full viewport height */
+}
+
+.mat-car {
+  width: 300px; /* Increase width as needed */
+  height: 300px; /* Increase height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: black;
+
+}
+
+.card {
+  background-color: white;
+  border: solid;
+  border-color: black;
+  width: 100%; /* Make the card fill the container */
+  height: 100%; /* Make the card fill the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

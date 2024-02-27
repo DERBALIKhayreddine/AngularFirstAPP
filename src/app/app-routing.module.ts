@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MemberComponent } from './member/member.component';
 import { MemberFormComponent } from './member-form/member-form.component';
+import { LoginComponent } from './login/login.component';
+import { DashboradComponent } from './dashborad/dashborad.component';
+import { ToolsComponent } from './tools/tools.component';
+import { EventsComponent } from './events/events.component';
+import { ArticleComponent } from './article/article.component';
 
 const routes: Routes = [
 {
@@ -19,12 +24,39 @@ const routes: Routes = [
 {
   path:'',
   pathMatch:'full',
-  redirectTo:'members'
+  redirectTo:'login'
 },
 {
   path:':id/edit',
   pathMatch: 'full',
   component : MemberFormComponent
+},
+{
+  path:'login',
+  pathMatch:'full',
+  component:LoginComponent,
+},
+{
+  path:'dashborad',
+  pathMatch:'full',
+  component:DashboradComponent,
+
+},
+{
+  path:"tools",
+  pathMatch:'full',
+  component:ToolsComponent
+
+},
+{
+  path:'events',
+  pathMatch:'full',
+  component:EventsComponent
+},
+{
+  path:'article',
+  pathMatch:'full',
+  component:ArticleComponent
 }
 ];
 

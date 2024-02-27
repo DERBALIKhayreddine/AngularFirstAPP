@@ -16,13 +16,30 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { FirebaseModule } from './Firebase.module (2)';
+import { LoginComponent } from './login/login.component';
+import {MatCardModule} from '@angular/material/card';
+import { LayoutComponent } from './layout/layout.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
+import { DashboradComponent } from './dashborad/dashborad.component';
+import { ToolsComponent } from './tools/tools.component';
+import { EventsComponent } from './events/events.component';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MemberComponent,
     MemberFormComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    LoginComponent,
+    LayoutComponent,
+    DashboradComponent,
+    ToolsComponent,
+    EventsComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +55,13 @@ import { FirebaseModule } from './Firebase.module (2)';
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
-    FirebaseModule
+    FirebaseModule,
+    MatCardModule,
+    MatMenuModule,
+    MatListModule,
+    MatToolbarModule,
+    MatSidenavModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

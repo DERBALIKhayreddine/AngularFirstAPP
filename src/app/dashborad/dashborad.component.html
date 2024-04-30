@@ -1,1 +1,56 @@
-<p>dashborad works!</p>
+<div fxLayout="row" fxLayoutAlign="space-evenly center" >
+<!---->
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Members</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>{{Nb_Members}}</mat-card-content>
+</mat-card>
+
+<!---->
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Articles</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>{{Nb_Articles}}</mat-card-content>
+</mat-card>
+<!---->
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Events</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>{{Nb_Events}}</mat-card-content>
+</mat-card>
+<!---->
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Tools</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>{{Nb_Tools}}</mat-card-content>
+</mat-card>
+</div>
+
+
+<div fxLayout="row" fxLayoutAlign="space-evenly center" >
+  <div class="chart-wrapper" style="width: 600px;  display: inline-block;" >
+    <canvas baseChart
+            [type]="'line'"
+            [datasets]="chartData"
+            [labels]="chartLabels"
+            [options]="chartOptions">
+    </canvas>
+  </div>
+  <div class="chart-wrapper" style="width: 600px; display: inline-block;">
+    <canvas baseChart
+            [type]="'pie'"
+            [datasets]="chartData2"
+            [labels]="chartLabels2"
+            [options]="chartOptions">
+    </canvas>
+  </div>
+
+</div>

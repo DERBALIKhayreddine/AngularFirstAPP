@@ -8,12 +8,22 @@ import { AuthService } from 'src/service/AuthService (2) (1)';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent {
-  constructor(private AuthSer:  AuthService, private router: Router,){}
+  user !:any
+  constructor(private AuthSer:  AuthService, private router: Router){
+    this.AuthSer.getUserClaims().then((u)=>{
+      this.user=u;
+      console.warn(this.user.displayName);
+      console.warn(this.user.photoURL);
+
+
+    })
+  }
 
   logout():void{
     this.AuthSer.doLogout().then(()=>{
       this.router.navigate(['/login'])
     })
   }
+
 
 }

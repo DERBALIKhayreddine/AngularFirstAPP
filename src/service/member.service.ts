@@ -1,7 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GLOBAL } from 'src/app/app-config';
-import { HttpClient } from '@angular/common/http';
 import { Member } from 'src/models/Member';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { Member } from 'src/models/Member';
 })
 export class MemberService {
 
-  tab: Member[]= GLOBAL.DB.members;
+  tab: any[]= GLOBAL.DB.members;
 
   ONSAVE(MemberToSave:Member): Observable<Member>
   {

@@ -1,31 +1,117 @@
-
 {
-  "members" :[
+  "members": [
     {
-      "id":"1",
-      "cin":"12345678",
-      "name":"Khayri",
-      "type":"king",
-      "cv":"lien",
-      "createDate":"30/01/2024"
+      "id": "1",
+      "cin": "12345678",
+      "name": "Khayri",
+      "type": "king",
+      "cv": "lien",
+      "createDate": "30/01/2024",
+      "tab_pub":[{
+        "id": "d4c7",
+        "titre": "1111",
+        "type": "111",
+        "date": "111",
+        "source": "111"
+        }],
+      "tab_evt": [{
+        "id": "2",
+        "titre": "Event 2",
+        "startdate": "2024-05-15T00:00:00.000Z",
+        "enddate": "2024-04-23T00:00:00.000Z",
+        "lieu": "Another Location"
+      }]
     },
     {
-      "id":"2",
-      "cin":"12345679",
-      "name":"Nour",
-      "type":"X",
-      "cv":"lien",
-      "createDate":"30/01/2024"
-
+      "id": "2",
+      "cin": "12345679",
+      "name": "Nour",
+      "type": "X",
+      "cv": "lien",
+      "createDate": "30/01/2024",
+      "tab_pub": [],
+      "tab_evt":[{
+        "id": "9879",
+        "titre": "titit",
+        "startdate": "2024-04-30T22:00:00.000Z",
+        "enddate": "2024-05-10T22:00:00.000Z",
+        "lieu": "asdfasd"
+      }]
     },
     {
-      "id":"3",
-      "cin":"12345670",
-      "name":"Islem",
-      "type":"X",
-      "cv":"lien",
-      "createDate":"30/01/2024"
-
+      "id": "3",
+      "cin": "12345670",
+      "name": "Islem",
+      "type": "X",
+      "cv": "lien",
+      "createDate": "30/01/2024",
+      "tab_pub": [{
+        "id": "756",
+        "titre": "333",
+        "type": "33",
+        "date": "33",
+        "source": "33"
+      }],
+      "tab_evt":  [{
+        "id": "9bdc",
+        "titre": "ww",
+        "startdate": "2024-04-22T22:00:00.000Z",
+        "enddate": "2024-04-26T22:00:00.000Z",
+        "lieu": "www"
+      }]
+    }
+  ],
+  "articles": [
+    {
+      "id": "d4c7",
+      "titre": "1111",
+      "type": "111",
+      "date": "111",
+      "source": "111"
+    },
+    {
+      "id": "c7",
+      "titre": "2222",
+      "type": "22",
+      "date": "222",
+      "source": "22"
+    },
+    {
+      "id": "756",
+      "titre": "333",
+      "type": "33",
+      "date": "33",
+      "source": "33"
+    }
+  ],
+  "Events": [
+    {
+      "id": "1",
+      "titre": "Event 1",
+      "startdate": "2024-04-23T00:00:00.000Z",
+      "enddate": "2024-04-23T00:00:00.000Z",
+      "lieu": "Some Location"
+    },
+    {
+      "id": "2",
+      "titre": "Event 2",
+      "startdate": "2024-05-15T00:00:00.000Z",
+      "enddate": "2024-04-23T00:00:00.000Z",
+      "lieu": "Another Location"
+    },
+    {
+      "id": "9bdc",
+      "titre": "ww",
+      "startdate": "2024-04-22T22:00:00.000Z",
+      "enddate": "2024-04-26T22:00:00.000Z",
+      "lieu": "www"
+    },
+    {
+      "id": "9879",
+      "titre": "titit",
+      "startdate": "2024-04-30T22:00:00.000Z",
+      "enddate": "2024-05-10T22:00:00.000Z",
+      "lieu": "asdfasd"
     }
   ]
 }

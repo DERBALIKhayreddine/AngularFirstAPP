@@ -51,6 +51,34 @@
             [labels]="chartLabels2"
             [options]="chartOptions">
     </canvas>
+  </div><br>
+  <div class="chart-wrapper" style="width: 600px; display: inline-block;">
+    <canvas baseChart
+            [type]="'bar'"
+            [datasets]="chartData3"
+            [labels]="chartLabels3"
+            [options]="chartOptions3">
+    </canvas>
   </div>
 
+
+
 </div>
+<div class="chart-wrapper" style="width: 600px; display: inline-block;">
+  <canvas baseChart
+          [type]="'doughnut'"
+          [datasets]="chartData2"
+          [labels]="chartLabels2"
+          [options]="chartOptions">
+  </canvas>
+</div>
+<div class="chart-wrapper" style="width: 600px; display: inline-block;">
+  <canvas baseChart
+          [type]="'polarArea'"
+          [datasets]="chartData"
+          [labels]="chartLabels"
+          [options]="chartOptions">
+  </canvas>
+</div>
+
+

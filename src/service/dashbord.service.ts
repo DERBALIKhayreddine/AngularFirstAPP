@@ -28,4 +28,11 @@ export class DashbordService {
     return this.http.get<EventsModel[]>('http://localhost:3000/Events');
 
   }
+  getAllStudentMembers():Observable<Member[]>{
+    return this.http.get<Member[]>('http://localhost:3000/members?type=student');
+  }
+
+  getAllTeacherMembers():Observable<Member[]>{
+    return this.http.get<Member[]>('http://localhost:3000/members?type=teacher');
+  }
 }

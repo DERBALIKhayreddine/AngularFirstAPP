@@ -9,6 +9,7 @@ import { DashbordService } from 'src/service/dashbord.service';
 })
 export class DashboradComponent implements OnInit {
   tab_nbarticles: any[] = [];
+  tab_student :any[]=[];
 
   ngOnInit(): void {
     this.service.getAllMemebers().subscribe((res)=>{this.Nb_Members=res.length
@@ -21,17 +22,19 @@ export class DashboradComponent implements OnInit {
         }];
       }
     })
-    this.service.getAllEnvents().subscribe((res)=>{this.Nb_Events=res.length})
-    this.service.getAllAricles().subscribe((res)=>{this.Nb_Articles=res.length})
 
+    this.displayPie();
+    this.displayBar();
   }
   constructor(private service :DashbordService){}
 
-
+  //declarations 
   Nb_Articles!: number;
   Nb_Events !: number;
   Nb_Members !: number;
   Nb_Tools !: number;
+  Nb_student!: number;
+  Nb_teacher !: number;
 
   chartData: ChartDataset[]=[];
   chartLabels: string[] = [];
@@ -40,12 +43,57 @@ export class DashboradComponent implements OnInit {
   chartData2: ChartDataset[] = [
     {
       // ⤵️ Add these
-      label: '$ in millions',
-      data: [ 1551, 1688, 1800, 1895, 2124, 2124 ]
+      label: '$Pie',
+      data: [ ]
     }
   ];
-  chartLabels2: string[] = ['A','B','C','D','E','F'];
+  chartLabels2: string[] = ['Teacher','Student'];
   chartOptions2: ChartOptions = {};
+
+  chartData3: ChartDataset[] = [
+    {
+      label: 'Number of Events',
+      data: []
+    }
+  ];
+  chartLabels3: string[] = [];
+  chartOptions3: ChartOptions = {};
+
+
+
+  //function
+  displayPie(){
+    this.service.getAllStudentMembers().subscribe((students) => {
+      this.Nb_student = students.length;
+      console.warn(students);
+      
+      this.service.getAllTeacherMembers().subscribe((teachers) => {
+        this.Nb_teacher = teachers.length;
+        console.warn(teachers);
+        
+        this.chartData2 = [
+          {
+            label: '$Pie',
+            data: [this.Nb_teacher, this.Nb_student]
+          }
+        ];
+      });
+    });
+  }
+  displayBar() {
+    this.service.getAllStudentMembers().subscribe((students) => {
+      this.Nb_student = students.length;
+      for (let i = 0; i < this.Nb_student; i++) {
+        const studentName = students[i].name;
+        const eventsCount = students[i].tab_evt.length;
+        this.chartData3[0].data.push(eventsCount);
+        this.chartLabels3.push(studentName);
+      }
+    });
+  }
+  
+  
+  
 
 
 }
